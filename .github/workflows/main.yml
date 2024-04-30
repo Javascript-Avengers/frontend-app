@@ -1,0 +1,19 @@
+name: CD Pipeline
+
+on:
+  repository_dispatch:
+    types: [trigger-cd]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      # Add your deployment steps here
+      - name: Deploy
+        run: |
+          # Add your deployment script or commands here
+          echo "Deploying..."
