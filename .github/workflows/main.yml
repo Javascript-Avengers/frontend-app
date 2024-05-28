@@ -20,4 +20,4 @@ jobs:
       - name: Deploy
         run: |
           # Add your deployment script or commands here
-          echo "Deploying..."
+          echo "Deploying... ${{ github.event.inputs.region}}"
