@@ -1,9 +1,12 @@
 name: CD Pipeline
 
 on:
-  repository_dispatch:
-    types: [trigger-cd]
-
+  workflow_dispatch:
+    # types: [trigger-cd]
+    inputs:
+      description: 'region'
+      required: true
+      default: 'us-east-1'
 jobs:
   deploy:
     runs-on: ubuntu-latest
